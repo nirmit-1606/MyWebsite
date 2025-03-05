@@ -63,3 +63,37 @@ h1{
 .container > p{
     color: rgb(131, 141, 255);
 }
+
+button{
+    background-color: blanchedalmond;
+    border: 2px solid rgb(255, 138, 138);
+    border-radius: 10px;
+    padding: 10px 20px;
+    box-shadow: 4px 4px 3px hsl(270, 50%, 30%);
+}
+button:hover{
+    background-color: rgb(255, 228, 187);
+    border: 2px solid rgb(255, 164, 164);
+    box-shadow: 4px 4px 3px hsl(296, 50%, 30%);
+}
+button:active{
+    background-color: rgb(255, 195, 104);
+    border: 2px solid rgb(255, 101, 101);
+    box-shadow: 2px 2px 2px hsl(296, 50%, 30%);
+}
+
+li:hover{
+    background-color: rgb(255, 255, 117);
+}
+li:not(:hover){
+    background-color: rgb(206, 206, 206);
+}
+
+#greeting p{
+    background-color: aquamarine;
+    padding: 10px 5px;
+    display: none;
+}
+#greeting:hover p{
+    display: block;
+}
