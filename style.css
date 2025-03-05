@@ -1,12 +1,9 @@
-body{
-    background-color: black;
-}
 h1{
-    color: aliceblue;
-    border: 2px solid hsl(140, 100%, 86%);
+    color: rgb(25, 28, 83);
+    border: 2px solid hsl(139, 98%, 57%);
     border-radius: 15px;
 
-    text-shadow: 5px 5px 8px hsl(0, 100%, 65%), -3px -3px 8px hsl(184, 100%, 77%);
+    text-shadow: 5px 5px 8px hsl(0, 100%, 58%), -3px -3px 8px hsl(193, 100%, 55%);
 }
 #p1{
     color: tomato;
@@ -27,11 +24,31 @@ h1{
     background-color: darkred;
 }
 
-#box{
+#box1{
     width: 100px;
     height: 100px;
     background-color: bisque;
     border-radius: 10px;
     margin: auto;
     box-shadow: 3px 3px 5px;
+}
+#box2{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(255, 163, 110);
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+#box3{
+    width: 100px;
+    height: 150px;
+    background-color: rgb(190, 255, 61);
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px;
+    float: right;
+    margin-left: 20px;
+    margin-bottom: 10px;
 }
