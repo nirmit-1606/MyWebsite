@@ -5,6 +5,8 @@ h1{
     color: aliceblue;
     border: 2px solid hsl(140, 100%, 86%);
     border-radius: 15px;
+
+    text-shadow: 5px 5px 8px hsl(0, 100%, 65%), -3px -3px 8px hsl(184, 100%, 77%);
 }
 #p1{
     color: tomato;
@@ -23,4 +25,13 @@ h1{
 }
 .even{
     background-color: darkred;
+}
+
+#box{
+    width: 100px;
+    height: 100px;
+    background-color: bisque;
+    border-radius: 10px;
+    margin: auto;
+    box-shadow: 3px 3px 5px;
 }
