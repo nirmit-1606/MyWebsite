@@ -3,6 +3,8 @@ body{
 }
 h1{
     color: aliceblue;
+    border: 2px solid hsl(140, 100%, 86%);
+    border-radius: 15px;
 }
 #p1{
     color: tomato;
