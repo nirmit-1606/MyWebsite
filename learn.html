@@ -179,7 +179,12 @@
 
         <script>
             function doSomething(){
-                document.getElementById("greeting").innerHTML = "Goodbye";
+                if (document.getElementById("greeting").innerHTML == "Hello") {
+                    document.getElementById("greeting").innerHTML = "Goodbye";
+                }
+                else {
+                    document.getElementById("greeting").innerHTML = "Hello";
+                }
             }
         </script>
 
