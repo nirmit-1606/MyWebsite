@@ -89,11 +89,51 @@ li:not(:hover){
     background-color: rgb(206, 206, 206);
 }
 
+#greeting{
+    display: inline-block;
+}
+
 #greeting p{
     background-color: aquamarine;
     padding: 10px 5px;
     display: none;
 }
 #greeting:hover p{
+    display: block;
+}
+
+.dropdown{
+    display: inline-block;
+}
+
+.dropdown .input{
+    background-color: hsl(0, 10%, 80%);
+    padding: 10px 30px;
+    display: inline-block;
+    border: 2px solid hsl(0, 0%, 50%);
+    border-radius: 8px;
+    cursor: pointer;
+}
+.dropdown:hover .input{
+    background-color: hsl(0, 10%, 70%);
+    border: 2px solid hsl(0, 0%, 40%);
+}
+
+.dropdown p{
+    padding: 10px;
+    margin: 0;
+}
+.dropdown p:hover{
+    background-color: hsl(0, 0%, 80%);
+}
+
+.content{
+    background-color: hsl(0, 0%, 90%);
+    min-width: 120px;
+    position: absolute;
+    box-shadow: 2px 2px 8px hsl(0, 0%, 30%);
+    display: none;
+}
+.dropdown:hover .content{
     display: block;
 }
