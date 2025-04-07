@@ -1,12 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <title>Employee Directory</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h1>Hello World</h1>
-    
+    <h1>Employee Directory</h1>
+
+    <table id="employeeTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Filled dynamically with JS -->
+        </tbody>
+    </table>
+
+    <button onclick="toggleForm()">Add Employee</button>
+
+    <div id="formContainer" class="hidden">
+        <input type="text" id="empName" placeholder="Name">
+        <input type="text" id="empAddress" placeholder="Address">
+        <button class="submit" onclick="addEmployee()">Submit</button>
+    </div>
+
+    <script src="script.js"></script>
 </body>
+
 </html>

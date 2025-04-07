@@ -1,139 +1,67 @@
-h1{
-    color: rgb(25, 28, 83);
-    border: 2px solid hsl(139, 98%, 57%);
-    border-radius: 15px;
-
-    text-shadow: 5px 5px 8px hsl(0, 100%, 58%), -3px -3px 8px hsl(193, 100%, 55%);
-}
-#p1{
-    color: tomato;
-}
-#p2{
-    color: aqua;
-}
-#p3{
-    color: burlywood;
-}
-#p4{
-    color: chartreuse;
-}
-.odd{
-    background-color: darkblue;
-}
-.even{
-    background-color: darkred;
+*{
+    margin: 0;
 }
 
-#box1{
-    width: 100px;
-    height: 100px;
-    background-color: bisque;
-    border-radius: 10px;
-    margin: auto;
-    box-shadow: 3px 3px 5px;
+body {
+    font-family: Arial;
+    padding: 20px;
 }
-#box2{
-    width: 100px;
-    height: 100px;
-    background-color: rgb(255, 163, 110);
-    border-radius: 10px;
-    box-shadow: 3px 3px 5px;
-    float: left;
-    margin-right: 20px;
-    margin-bottom: 10px;
-}
-#box3{
-    width: 100px;
-    height: 150px;
-    background-color: rgb(190, 255, 61);
-    border-radius: 10px;
-    box-shadow: 3px 3px 5px;
-    float: right;
-    margin-left: 20px;
-    margin-bottom: 10px;
+  
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
 }
 
-.container{
-    border: 2px solid;
-    margin-top: 20px;
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
 }
-.container ~ p{
-    background-color: yellow;
+  
+.hidden {
+    display: none;
 }
-.container > p{
-    color: rgb(131, 141, 255);
+  
+#formContainer {
+    margin-top: 10px;
+}
+
+input {
+    display: flex;
+    margin-top: 10px;
+    padding: 5px;
 }
 
 button{
     background-color: blanchedalmond;
-    border: 2px solid rgb(255, 138, 138);
+    border: 1.5px solid rgb(255, 138, 138);
     border-radius: 10px;
-    padding: 10px 20px;
-    box-shadow: 4px 4px 3px hsl(270, 50%, 30%);
+    padding: 5px 15px;
+    box-shadow: 2px 2px 2px hsl(14, 50%, 30%);
+    font-size: 1em;
+    margin: 20px 0px;
 }
 button:hover{
-    background-color: rgb(255, 228, 187);
-    border: 2px solid rgb(255, 164, 164);
-    box-shadow: 4px 4px 3px hsl(296, 50%, 30%);
+    background-color: rgb(255, 215, 155);
 }
 button:active{
     background-color: rgb(255, 195, 104);
-    border: 2px solid rgb(255, 101, 101);
-    box-shadow: 2px 2px 2px hsl(296, 50%, 30%);
+    border: 1.5px solid rgb(255, 101, 101);
+    box-shadow: 1px 1px 2px hsl(14, 50%, 30%);
 }
 
-li:hover{
-    background-color: rgb(255, 255, 117);
+.submit{
+    background-color: hsl(120, 73%, 75%);
+    color: green;
+    border: 1.5px solid green;
+    box-shadow: 2px 2px 2px hsl(120, 100%, 15%);
 }
-li:not(:hover){
-    background-color: rgb(206, 206, 206);
+.submit:hover{
+    background-color: hsl(120, 73%, 55%);
 }
-
-#greeting{
-    display: inline-block;
-}
-
-#greeting p{
-    background-color: aquamarine;
-    padding: 10px 5px;
-    display: none;
-}
-#greeting:hover p{
-    display: block;
-}
-
-.dropdown{
-    display: inline-block;
-}
-
-.dropdown .input{
-    background-color: hsl(0, 10%, 80%);
-    padding: 10px 30px;
-    display: inline-block;
-    border: 2px solid hsl(0, 0%, 50%);
-    border-radius: 8px;
-    cursor: pointer;
-}
-.dropdown:hover .input{
-    background-color: hsl(0, 10%, 70%);
-    border: 2px solid hsl(0, 0%, 40%);
-}
-
-.dropdown p{
-    padding: 10px;
-    margin: 0;
-}
-.dropdown p:hover{
-    background-color: hsl(0, 0%, 80%);
-}
-
-.content{
-    background-color: hsl(0, 0%, 90%);
-    min-width: 120px;
-    position: absolute;
-    box-shadow: 2px 2px 8px hsl(0, 0%, 30%);
-    display: none;
-}
-.dropdown:hover .content{
-    display: block;
+.submit:active{
+    background-color: hsl(110, 70%, 75%);
+    border: 1.5px solid green;
+    box-shadow: 1px 1px 2px hsl(120, 100%, 15%);
 }
