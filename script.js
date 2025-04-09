@@ -1,6 +1,18 @@
 let employees = [];
 let employeeId = 1;
 
+window.onload = () => {
+    const savedEmployees = localStorage.getItem('employees');
+    if(savedEmployees) {
+        employees = JSON.parse(savedEmployees);
+        if(employees.length > 0){
+            // employeeId = Math.max(...employees.map(emp => emp.id)) + 1;
+            employeeId = employees.length + 1;
+        }
+        updateTable();
+    }
+};
+
 function toggleForm() {
     document.getElementById('formContainer').classList.toggle('hidden');
 }
@@ -21,6 +33,7 @@ function addEmployee() {
     };
 
     employees.push(newEmployee);
+    saveToLocalStorage();
     updateTable();
     clearForm();
     toggleForm();
@@ -34,6 +47,10 @@ function updateTable() {
         const row = `<tr><td>${emp.id}</td><td>${emp.name}</td><td>${emp.address}</td></tr>`;
         tbody.innerHTML += row;
     });
+}
+
+function saveToLocalStorage() {
+    localStorage.setItem('employees', JSON.stringify(employees));
 }
 
 function clearForm() {
