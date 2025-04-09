@@ -35,33 +35,54 @@ input {
 
 button{
     background-color: blanchedalmond;
-    border: 1.5px solid rgb(255, 138, 138);
-    border-radius: 10px;
+    border: 1.5px solid #ff8a8a;
+    border-radius: 4px;
     padding: 5px 15px;
-    box-shadow: 2px 2px 2px hsl(14, 50%, 30%);
-    font-size: 1em;
-    margin: 20px 0px;
-}
-button:hover{
-    background-color: rgb(255, 215, 155);
-}
-button:active{
-    background-color: rgb(255, 195, 104);
-    border: 1.5px solid rgb(255, 101, 101);
-    box-shadow: 1px 1px 2px hsl(14, 50%, 30%);
+    box-shadow: 2px 2px 2px #4d4d4d;
+    font-size: 0.9em;
+    cursor: pointer;
 }
 
-.submit{
-    background-color: hsl(120, 73%, 75%);
-    color: green;
-    border: 1.5px solid green;
-    box-shadow: 2px 2px 2px hsl(120, 100%, 15%);
+button:hover{
+    background-color: #ffd79b;
 }
-.submit:hover{
-    background-color: hsl(120, 73%, 55%);
+
+button:active{
+    background-color: #ffc368;
+    border-color: #ff6565;
+    box-shadow: 1px 1px 2px #4d4d4d;
 }
-.submit:active{
-    background-color: hsl(110, 70%, 75%);
-    border: 1.5px solid green;
-    box-shadow: 1px 1px 2px hsl(120, 100%, 15%);
+
+/* Delete Button */
+
+td button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+}
+  
+td button:hover {
+    background-color: #c0392b;
+}
+
+td button:active {
+    background-color: hsl(6, 63%, 40%);
+    border: none;
+}
+
+/* Submit Button */
+
+#formContainer button{
+    background-color: #04AA6D;
+    color: white;
+    border: none;
+}
+
+#formContainer button:hover{
+    background-color: hsl(158, 95%, 30%);
+}
+
+#formContainer button:active{
+    background-color: hsl(158, 95%, 28%);
+    border: none;
 }

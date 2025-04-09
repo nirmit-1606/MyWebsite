@@ -6,8 +6,8 @@ window.onload = () => {
     if(savedEmployees) {
         employees = JSON.parse(savedEmployees);
         if(employees.length > 0){
-            // employeeId = Math.max(...employees.map(emp => emp.id)) + 1;
-            employeeId = employees.length + 1;
+            employeeId = Math.max(...employees.map(emp => emp.id)) + 1;
+            // employeeId = employees.length + 1;
         }
         updateTable();
     }
@@ -44,9 +44,30 @@ function updateTable() {
     tbody.innerHTML = '';
 
     employees.forEach(emp => {
-        const row = `<tr><td>${emp.id}</td><td>${emp.name}</td><td>${emp.address}</td></tr>`;
-        tbody.innerHTML += row;
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${emp.id}</td>
+            <td>${emp.name}</td>
+            <td>${emp.address}</td>
+            <td><button onclick = "deleteEmployee(${emp.id})">Delete</button></td>
+        `;
+        tbody.appendChild(row);
     });
+}
+
+function deleteEmployee(id) {
+    employees = employees.filter(emp => emp.id !== id);
+    saveToLocalStorage();
+    updateTable();
+}
+
+function clearAll() {
+    if(confirm('Are you sure you want to clear all emploiyee data?')) {
+        employees = [];
+        employeeId = 1;
+        localStorage.removeItem('employees');
+        updateTable();
+    }
 }
 
 function saveToLocalStorage() {
