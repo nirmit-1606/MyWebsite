@@ -19,13 +19,16 @@ th, td {
   text-align: left;
 }
   
+.show {
+    display: flex;
+}
+
 .hidden {
     display: none;
 }
   
 #formContainer {
     margin-top: 16px;
-    display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     width: 240px;
@@ -56,37 +59,54 @@ button:active{
     box-shadow: 1px 1px 2px #4d4d4d;
 }
 
-/* Delete Button */
+/* Edit Button */
 
-td button {
-    background-color: #e74c3c;
+td .edit {
+    background-color: #008ab8;
     color: white;
     border: none;
 }
   
-td button:hover {
-    background-color: #c0392b;
+td .edit:hover {
+    background-color: #04789f;
 }
 
-td button:active {
-    background-color: hsl(6, 63%, 40%);
+td .edit:active {
+    background-color: #047195;
     border: none;
 }
 
-/* Submit Button */
+/* Delete and Cancel Buttons */
 
-#formContainer button{
+td .delete, .cancel {
+    background-color: #e74d3c;
+    color: white;
+    border: none;
+}
+  
+td .delete:hover, .cancel:hover {
+    background-color: #bf3a2b;
+}
+
+td .delete:active, .cancel:active {
+    background-color: #a63326;
+    border: none;
+}
+
+/* Submit and Update Buttons */
+
+#formContainer .submit, td .update{
     background-color: #04AA6D;
     color: white;
     border: none;
     padding: 7px;
 }
 
-#formContainer button:hover{
+#formContainer .submit:hover, td .update:hover{
     background-color: hsl(158, 95%, 30%);
 }
 
-#formContainer button:active{
+#formContainer .submit:active, td .update:active{
     background-color: hsl(158, 95%, 28%);
     border: none;
 }
