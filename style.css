@@ -5,6 +5,7 @@
 body {
     font-family: Arial;
     padding: 20px;
+    background-color: #fef9ef;
 }
 
 .content {
@@ -20,17 +21,18 @@ table {
 
 th,
 td {
-    border: 1px solid #ddd;
+    border: 1px solid #d0d0d0;
     padding: 10px;
     text-align: left;
 }
 
 th {
-    background-color: #05688f;
+    background-color: #227c9d;
     color: white;
 }
 
-tr:nth-child(even) {background-color: #f2f2f2;}
+tr:nth-child(even) {background-color: #fdf4e2;}
+/* tr:nth-child(odd) {background-color: #fff;} */
 
 .show {
     display: flex;
@@ -75,17 +77,17 @@ button:active {
 /* Edit Button */
 
 td .edit {
-    background-color: #008ab8;
-    color: white;
+    background-color: #ffcb77;
+    color: black;
     border: none;
 }
 
 td .edit:hover {
-    background-color: #04789f;
+    background-color: #ffbb4d;
 }
 
 td .edit:active {
-    background-color: #047195;
+    background-color: #ffb53d;
     border: none;
 }
 
@@ -93,39 +95,42 @@ td .edit:active {
 
 td .delete,
 .cancel {
-    background-color: #e74d3c;
+    background-color: #fe5d62;
     color: white;
     border: none;
 }
 
 td .delete:hover,
 .cancel:hover {
-    background-color: #bf3a2b;
+    background-color: #f7454b;
 }
 
 td .delete:active,
 .cancel:active {
-    background-color: #a63326;
+    background-color: #f53d43;
     border: none;
 }
 
 /* Submit and Update Buttons */
 
+#formContainer .submit {
+    padding: 7px;
+}
+
 #formContainer .submit,
 td .update {
-    background-color: #04AA6D;
+    background-color: #11b091;
     color: white;
     border: none;
-    padding: 7px;
 }
 
 #formContainer .submit:hover,
 td .update:hover {
-    background-color: hsl(158, 95%, 30%);
+    background-color: #109e81;
 }
 
 #formContainer .submit:active,
 td .update:active {
-    background-color: hsl(158, 95%, 28%);
+    background-color: #0f957a;
     border: none;
 }
