@@ -10,6 +10,7 @@
 
 <body>
     <div class="content">
+        
         <h1>Employee Directory</h1>
 
         <table id="employeeTable">
@@ -26,14 +27,24 @@
             </tbody>
         </table>
         <br>
-        <button onclick="toggleForm()">Add Employee</button>
+        <button onclick="toggleForm(true)">Add Employee</button>
         <button onclick="clearAll()" style="margin-left: 20px;">Clear All</button>
 
-        <div id="formContainer" class="hidden">
-            <input type="text" id="empName" placeholder="Name">
-            <input type="text" id="empAddress" placeholder="Address">
-            <button onclick="addEmployee()" class="submit">Submit</button>
+        <div id="overlayForm" class="overlay hidden">
+            <div class="form-box">
+                <h2>Add New Employee</h2>
+                <input type="text" id="empName" placeholder="Name">
+                <input type="text" id="empAddress" placeholder="Address">
+                <div class="form-buttons">
+                    <button onclick="toggleForm(false)" class="cancel">Cancel</button>
+                    <button onclick="addEmployee()" class="submit">Submit</button>
+                </div>
+            </div>
         </div>
+
+        <!-- Toast Notification -->
+        <div id="toast"></div>
+    
     </div>
 
     <script src="script.js"></script>

@@ -14,9 +14,9 @@ window.onload = () => {
     }
 };
 
-function toggleForm() {
-    document.getElementById('formContainer').classList.toggle('show');
-    document.getElementById('formContainer').classList.toggle('hidden');
+function toggleForm(show) {
+    document.getElementById('overlayForm').classList.toggle('hidden', !show);
+    if (!show) clearForm();
 }
 
 function addEmployee() {
@@ -38,7 +38,7 @@ function addEmployee() {
     saveToLocalStorage();
     updateTable();
     clearForm();
-    toggleForm();
+    toggleForm(false);
 }
 
 function updateTable() {
@@ -47,6 +47,7 @@ function updateTable() {
 
     employees.forEach(emp => {
         const row = document.createElement('tr');
+        row.className = (emp.id === currentlyEditingId) ? 'editing-row' : '';
 
         if (emp.id === currentlyEditingId) {
             row.innerHTML = `
@@ -112,6 +113,7 @@ function clearAll() {
     if (confirm('Are you sure you want to clear all emploiyee data?')) {
         employees = [];
         employeeId = 1;
+        currentlyEditingId = null;
         localStorage.removeItem('employees');
         updateTable();
     }
