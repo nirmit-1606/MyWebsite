@@ -9,6 +9,7 @@ class EmployeeDirectory {
         this.toast = document.getElementById('toast');
 
         this.loadFromLocalStorage();
+        this.updateTable();
     }
 
     loadFromLocalStorage() {
@@ -78,7 +79,7 @@ class EmployeeDirectory {
             return;
         }
 
-        const index = employees.findIndex(emp => emp.id === id);
+        const index = this.employees.findIndex(emp => emp.id === id);
         this.employees[index].name = name;
         this.employees[index].address = address;
 
@@ -105,7 +106,7 @@ class EmployeeDirectory {
             this.employees = [];
             this.employeeId = 1;
             this.currentlyEditingId = null;
-            this.localStorage.removeItem('employees');
+            localStorage.removeItem('employees');
             this.updateTable();
             this.showToast('All emoliyee data cleared.');
         }
@@ -121,11 +122,11 @@ class EmployeeDirectory {
             if (emp.id === this.currentlyEditingId) {
                 row.innerHTML = `
                     <td>${emp.id}</td>
-                    <td><input type="text" id="editName${emp.id}" placeholder="Name" value=${emp.name}></td>
-                    <td><input type="text" id="editAddress${emp.id}" placeholder="Address" value=${emp.address}></td>
+                    <td><input type="text" id="editName${emp.id}" value=${emp.name} placeholder="Name"></td>
+                    <td><input type="text" id="editAddress${emp.id}" value=${emp.address} placeholder="Address"></td>
                     <td>
-                        <button onclick = "updateEmployee(${emp.id})" class="update">Update</button>
-                        <button onclick = "cancelEdit()" class="cancel">Cancel</button>
+                        <button onclick = "directory.updateEmployee(${emp.id})" class="update">Update</button>
+                        <button onclick = "directory.cancelEdit()" class="cancel">Cancel</button>
                     </td>
                 `;
             } else {
@@ -134,8 +135,8 @@ class EmployeeDirectory {
                     <td>${emp.name}</td>
                     <td>${emp.address}</td>
                     <td>
-                        <button onclick = "editEmployee(${emp.id})" class="edit">Edit</button>
-                        <button onclick = "deleteEmployee(${emp.id})" class="delete">Delete</button>
+                        <button onclick = "directory.editEmployee(${emp.id})" class="edit">Edit</button>
+                        <button onclick = "directory.deleteEmployee(${emp.id})" class="delete">Delete</button>
                     </td>
                 `;
             }
