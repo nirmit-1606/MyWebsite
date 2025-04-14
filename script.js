@@ -86,7 +86,7 @@ class EmployeeDirectory {
         this.currentlyEditingId = null;
         this.saveToLocalStorage();
         this.updateTable();
-        this.showToast('Employee updated successfully!')
+        this.showToast('Employee updated successfully!');
     }
 
     cancelEdit() {
@@ -122,11 +122,11 @@ class EmployeeDirectory {
             if (emp.id === this.currentlyEditingId) {
                 row.innerHTML = `
                     <td>${emp.id}</td>
-                    <td><input type="text" id="editName${emp.id}" value=${emp.name} placeholder="Name"></td>
-                    <td><input type="text" id="editAddress${emp.id}" value=${emp.address} placeholder="Address"></td>
+                    <td><input type="text" id="editName${emp.id}" value="${emp.name}" placeholder="Name"></td>
+                    <td><input type="text" id="editAddress${emp.id}" value="${emp.address}" placeholder="Address"></td>
                     <td>
-                        <button onclick = "directory.updateEmployee(${emp.id})" class="update">Update</button>
-                        <button onclick = "directory.cancelEdit()" class="cancel">Cancel</button>
+                        <button onclick="directory.updateEmployee(${emp.id})" class="update">Update</button>
+                        <button onclick="directory.cancelEdit()" class="cancel">Cancel</button>
                     </td>
                 `;
             } else {
@@ -135,8 +135,8 @@ class EmployeeDirectory {
                     <td>${emp.name}</td>
                     <td>${emp.address}</td>
                     <td>
-                        <button onclick = "directory.editEmployee(${emp.id})" class="edit">Edit</button>
-                        <button onclick = "directory.deleteEmployee(${emp.id})" class="delete">Delete</button>
+                        <button onclick="directory.editEmployee(${emp.id})" class="edit">Edit</button>
+                        <button onclick="directory.deleteEmployee(${emp.id})" class="delete">Delete</button>
                     </td>
                 `;
             }
