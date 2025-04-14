@@ -24,7 +24,7 @@ function addEmployee() {
     const address = document.getElementById('empAddress').value;
 
     if (!name || !address) {
-        alert('Please enter both name and address.');
+        showToast('Please enter both name and address.');
         return;
     }
 
@@ -39,6 +39,7 @@ function addEmployee() {
     updateTable();
     clearForm();
     toggleForm(false);
+    showToast('Employee added successfully!');
 }
 
 function updateTable() {
@@ -85,7 +86,7 @@ function updateEmployee(id) {
     const address = document.getElementById(`editAddress${id}`).value;
 
     if (!name || !address) {
-        alert('Please fill in all fields.');
+        showToast('Please fill in all fields.');
         return;
     }
 
@@ -96,6 +97,7 @@ function updateEmployee(id) {
     currentlyEditingId = null;
     saveToLocalStorage();
     updateTable();
+    showToast('Employee updated successfully!')
 }
 
 function cancelEdit() {
@@ -107,6 +109,7 @@ function deleteEmployee(id) {
     employees = employees.filter(emp => emp.id !== id);
     saveToLocalStorage();
     updateTable();
+    showToast('Employee deleted.');
 }
 
 function clearAll() {
@@ -116,6 +119,7 @@ function clearAll() {
         currentlyEditingId = null;
         localStorage.removeItem('employees');
         updateTable();
+        showToast('All emoliyee data cleared.');
     }
 }
 
@@ -126,4 +130,11 @@ function saveToLocalStorage() {
 function clearForm() {
     document.getElementById('empName').value = '';
     document.getElementById('empAddress').value = '';
+}
+
+function showToast(message) {
+    const toast = document.getElementById('toast');
+    toast.textContent = message;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 3000);
 }
