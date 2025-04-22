@@ -8,23 +8,37 @@ class Task {
 
 class TaskManager {
     constructor() {
-        this.tasks = [];
-        this.taskId = 0;
+        this.tasks = this.loadTasks();
+        this.taskId = this.tasks.length > 0 ? Math.max(...this.tasks.map(t => t.id)) + 1 : 0;
+    }
+
+    saveTasks() {
+        localStorage.setItem('tasks', JSON.stringify(this.tasks));
+    }
+
+    loadTasks() {
+        const tasksJSON = localStorage.getItem('tasks');
+        return tasksJSON ? JSON.parse(tasksJSON) : [];
     }
 
     addTask(description) {
         const newTask = new Task(this.taskId++, description);
         this.tasks.push(newTask);
+        this.saveTasks();
         return newTask;
     }
 
     deleteTask(id) {
         this.tasks = this.tasks.filter(task => task.id !== id);
+        this.saveTasks();
     }
 
     toggleTaskStatus(id) {
         const task = this.tasks.find(task => task.id === id);
-        if (task) task.completed = !task.completed;
+        if (task) {
+            task.completed = !task.completed;
+            this.saveTasks();
+        }
     }
 
     getIncompleteCount() {
@@ -47,6 +61,8 @@ addTaskBtn.addEventListener("click", () => {
         renderTasks();
     }
 });
+
+renderTasks();
 
 function renderTasks() {
     taskList.innerHTML = "";
