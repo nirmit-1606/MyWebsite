@@ -63,6 +63,15 @@ button:hover {
     margin-left: 5px;
 }
 
+.task-buttons button:last-child {
+    background-color: #f44336;
+}
+
+.task-buttons button:last-child:hover {
+    background-color: #d32f2f;
+}
+
+
 .task-count {
     text-align: right;
     font-weight: bold;

@@ -50,7 +50,14 @@ addTaskBtn.addEventListener("click", () => {
 
 function renderTasks() {
     taskList.innerHTML = "";
-    taskManager.tasks.forEach(task => {
+
+    // Sort: incomplete first, then completed
+    const sortedTasks = [
+        ...taskManager.tasks.filter(task => !task.completed),
+        ...taskManager.tasks.filter(task => task.completed)
+    ];
+
+    sortedTasks.forEach(task => {
         const taskElement = document.createElement("div");
         taskElement.className = "task" + (task.completed ? " completed" : "");
 
@@ -62,7 +69,7 @@ function renderTasks() {
         buttonContainer.className = "task-buttons";
 
         const completeBtn = document.createElement("button");
-        completeBtn.textContent = "Complete";
+        completeBtn.textContent = task.completed ? "Incomplete" : "Complete";
         completeBtn.onclick = () => {
             taskManager.toggleTaskStatus(task.id);
             renderTasks();
