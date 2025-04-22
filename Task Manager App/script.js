@@ -56,14 +56,22 @@ const taskDescription = document.getElementById("taskDescription");
 let currentFilter = "all";
 const filterSelect = document.getElementById("filterSelect");
 
-addTaskBtn.addEventListener("click", () => {
+taskDescription.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+        addTaskFromInput();
+    }
+});
+
+function addTaskFromInput() {
     const desc = taskDescription.value.trim();
     if (desc) {
         taskManager.addTask(desc);
         taskDescription.value = "";
         renderTasks();
     }
-});
+}
+
+addTaskBtn.addEventListener("click", addTaskFromInput);
 
 filterSelect.addEventListener("change", () => {
     currentFilter = filterSelect.value;
