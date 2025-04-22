@@ -14,6 +14,14 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+button:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+    box-shadow: none;
+    opacity: 0.7;
+}
+
 h1 {
     text-align: center;
 }
@@ -38,6 +46,10 @@ button {
     font-size: 16px;
     cursor: pointer;
     border-radius: 4px;
+}
+
+#addTaskBtn:disabled {
+    background-color: hsl(123, 33%, 76%);
 }
 
 button:hover {

@@ -56,6 +56,10 @@ const taskDescription = document.getElementById("taskDescription");
 let currentFilter = "all";
 const filterSelect = document.getElementById("filterSelect");
 
+taskDescription.addEventListener("input", () => {
+    addTaskBtn.disabled = taskDescription.value.trim() === "";
+});
+
 taskDescription.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
         addTaskFromInput();
@@ -67,8 +71,10 @@ function addTaskFromInput() {
     if (desc) {
         taskManager.addTask(desc);
         taskDescription.value = "";
+        addTaskBtn.disabled = true;
         renderTasks();
     }
+    taskDescription.focus();
 }
 
 addTaskBtn.addEventListener("click", addTaskFromInput);
