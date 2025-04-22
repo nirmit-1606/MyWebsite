@@ -71,6 +71,14 @@ button:hover {
     background-color: #d32f2f;
 }
 
+.task-buttons .incomplete-btn {
+    background-color: hsl(68, 70%, 54%);
+    color: #333;
+}
+
+.task-buttons .incomplete-btn:hover {
+    background-color: hsl(65, 65%, 46%);
+}
 
 .task-count {
     text-align: right;

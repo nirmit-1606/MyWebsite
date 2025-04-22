@@ -70,6 +70,7 @@ function renderTasks() {
 
         const completeBtn = document.createElement("button");
         completeBtn.textContent = task.completed ? "Incomplete" : "Complete";
+        completeBtn.className = task.completed ? "incomplete-btn" : "";
         completeBtn.onclick = () => {
             taskManager.toggleTaskStatus(task.id);
             renderTasks();
