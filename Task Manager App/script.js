@@ -73,6 +73,7 @@ function addTaskFromInput() {
         taskDescription.value = "";
         addTaskBtn.disabled = true;
         renderTasks();
+        showToast("Task added!");
     }
     taskDescription.focus();
 }
@@ -118,6 +119,7 @@ function renderTasks() {
         completeBtn.className = task.completed ? "incomplete-btn" : "";
         completeBtn.onclick = () => {
             taskManager.toggleTaskStatus(task.id);
+            showToast(task.completed ? "Marked as complete" : "Still remaining!");
             renderTasks();
         };
 
@@ -125,6 +127,7 @@ function renderTasks() {
         deleteBtn.textContent = "Delete";
         deleteBtn.onclick = () => {
             taskManager.deleteTask(task.id);
+            showToast("Task deleted!");
             renderTasks();
         };
 
@@ -137,3 +140,13 @@ function renderTasks() {
 
     taskCount.textContent = "Remaining Tasks: " + taskManager.getIncompleteCount();
 }
+
+function showToast(message) {
+    const toast = document.getElementById("toast");
+    toast.textContent = message;
+    toast.classList.add("show");
+
+    setTimeout(() => {
+        toast.classList.remove("show");
+    }, 2000);
+}  
