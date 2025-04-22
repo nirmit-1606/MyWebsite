@@ -44,6 +44,17 @@ button:hover {
     background-color: #45a049;
 }
 
+.task-filter {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.task-filter select {
+    padding: 4px 8px;
+}
+
 .task {
     display: flex;
     justify-content: space-between;

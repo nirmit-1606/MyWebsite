@@ -53,6 +53,9 @@ const taskCount = document.getElementById("taskCount");
 const addTaskBtn = document.getElementById("addTaskBtn");
 const taskDescription = document.getElementById("taskDescription");
 
+let currentFilter = "all";
+const filterSelect = document.getElementById("filterSelect");
+
 addTaskBtn.addEventListener("click", () => {
     const desc = taskDescription.value.trim();
     if (desc) {
@@ -62,18 +65,30 @@ addTaskBtn.addEventListener("click", () => {
     }
 });
 
+filterSelect.addEventListener("change", () => {
+    currentFilter = filterSelect.value;
+    renderTasks();
+});
+
 renderTasks();
 
 function renderTasks() {
     taskList.innerHTML = "";
 
-    // Sort: incomplete first, then completed
-    const sortedTasks = [
-        ...taskManager.tasks.filter(task => !task.completed),
-        ...taskManager.tasks.filter(task => task.completed)
-    ];
+    let tasksToRender = [...taskManager.tasks];
 
-    sortedTasks.forEach(task => {
+    if (currentFilter === "incomplete") {
+        tasksToRender = tasksToRender.filter(task => !task.completed);
+    } else if (currentFilter === "completed") {
+        tasksToRender = tasksToRender.filter(task => task.completed);
+    } else {
+        tasksToRender = [
+            ...tasksToRender.filter(task => !task.completed),
+            ...tasksToRender.filter(task => task.completed)
+        ];
+    }
+
+    tasksToRender.forEach(task => {
         const taskElement = document.createElement("div");
         taskElement.className = "task" + (task.completed ? " completed" : "");
 
@@ -85,7 +100,7 @@ function renderTasks() {
         buttonContainer.className = "task-buttons";
 
         const completeBtn = document.createElement("button");
-        completeBtn.textContent = task.completed ? "Incomplete" : "Complete";
+        completeBtn.textContent = task.completed ? "Mark as Incomplete" : "Mark as Complete";
         completeBtn.className = task.completed ? "incomplete-btn" : "";
         completeBtn.onclick = () => {
             taskManager.toggleTaskStatus(task.id);

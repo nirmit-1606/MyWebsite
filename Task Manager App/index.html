@@ -15,6 +15,16 @@
             <input type="text" id="taskDescription" placeholder="Enter a new task" />
             <button id="addTaskBtn">Add Task</button>
         </div>
+
+        <div class="task-filter">
+            <label for="filterSelect">Filter:</label>
+            <select id="filterSelect">
+                <option value="all">All</option>
+                <option value="incomplete">Incomplete</option>
+                <option value="completed">Completed</option>
+            </select>
+        </div>
+
         <div id="taskCount" class="task-count">Remaining Tasks: 0</div>
         <div id="taskList" class="task-list"></div>
     </div>
