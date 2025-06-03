@@ -43,6 +43,15 @@ const CartIcon = () => {
               <span className="item-total">${(item.price * item.quantity).toFixed(2)}</span>
             </div>
           ))}
+          <div className="preview-footer">
+            <div className="preview-total">
+              Total: $
+              {cart
+                .reduce((sum, item) => sum + item.price * item.quantity, 0)
+                .toFixed(2)}
+            </div>
+            <Link to="/cart" className="preview-checkout-btn">Checkout</Link>
+          </div>
         </div>
       )}
     </div>

@@ -81,3 +81,30 @@
 .item-total {
   font-weight: bold;
 }
+
+.preview-footer {
+  border-top: 1px solid #ddd;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  text-align: right;
+}
+
+.preview-total {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.preview-checkout-btn {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  background-color: #f57c00;
+  color: white !important;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.preview-checkout-btn:hover {
+  background-color: #ef6c00;
+}
