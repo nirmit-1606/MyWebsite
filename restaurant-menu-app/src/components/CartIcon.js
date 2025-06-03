@@ -31,9 +31,8 @@ const CartIcon = () => {
         </Link>
       </div>
 
-      {showPreview && cart.length > 0 && (
-        <div className="cart-preview">
-          {cart.map(item => (
+      <div className={`cart-preview ${showPreview && cart.length > 0 ? 'visible' : ''}`}>
+        {cart.map(item => (
             <div key={item.id} className="preview-item">
               <img src={item.image} alt={item.name} />
               <div className="preview-details">
@@ -52,8 +51,7 @@ const CartIcon = () => {
             </div>
             <Link to="/cart" className="preview-checkout-btn">Checkout</Link>
           </div>
-        </div>
-      )}
+      </div>
     </div>
   );
 };

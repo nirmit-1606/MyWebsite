@@ -36,15 +36,26 @@
 .cart-preview {
   position: absolute;
   right: 0;
-  top: 100%; /* aligns directly under the icon */
-  margin-top: 0px; /* remove any accidental gap */
+  top: 100%;
+  width: 270px;
   background: white;
   border: 1px solid #ccc;
   padding: 0.8rem;
-  width: 270px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   border-radius: 8px;
   z-index: 999;
+
+  /* animation states */
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.5s ease;
+}
+
+.cart-preview.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 .preview-item {
