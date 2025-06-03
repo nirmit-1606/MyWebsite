@@ -26,11 +26,11 @@ const RecipeCard = ({ recipe }) => {
         <div className="recipe-card">
             <img src={image} alt={name} className="recipe-image" />
             <div className="recipe-details">
-                <h3>{name}</h3>
+                <h3 title={name}>{name}</h3>
                 <p>{cuisine} | ⭐ {rating}</p>
                 <p className="price">${price.toFixed(2)}</p>
-                <button className="add-to-cart" onClick={handleAddToCart}>Add to Cart</button>
             </div>
+            <button className="add-to-cart" onClick={handleAddToCart}>Add to Cart</button>
         </div>
     );
 };

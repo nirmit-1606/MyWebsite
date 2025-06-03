@@ -36,7 +36,7 @@ const CartIcon = () => {
             <div key={item.id} className="preview-item">
               <img src={item.image} alt={item.name} />
               <div className="preview-details">
-                <span className="item-name">{item.name}</span>
+                <span className="item-name" title={item.name}>{item.name}</span>
                 <span className="item-qty">× {item.quantity}</span>
               </div>
               <span className="item-total">${(item.price * item.quantity).toFixed(2)}</span>
