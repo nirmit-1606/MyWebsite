@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeFromCart, clearCart, addToCart } from '../features/cart/cartSlice';
-// import './Cart.css';
+import '../styles/Cart.css';
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
@@ -24,7 +24,7 @@ const Cart = () => {
               <div className="qty-controls">
                 <button onClick={() => dispatch(addToCart(item))}>+</button>
                 <span>{item.quantity}</span>
-                <button onClick={() => dispatch(removeFromCart(item.id))}>-</button>
+                <button onClick={() => dispatch(removeFromCart(item.id))} disabled={item.quantity === 1}>-</button>
               </div>
               <span>${(item.price * item.quantity).toFixed(2)}</span>
             </div>
