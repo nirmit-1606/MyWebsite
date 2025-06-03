@@ -1,0 +1,17 @@
+.recipe-card {
+  border: 1px solid #ccc;
+  padding: 1em;
+  width: 250px;
+  margin: 1em;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.recipe-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+.menu-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
