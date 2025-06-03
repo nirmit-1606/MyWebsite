@@ -49,6 +49,6 @@ h1 {
     box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
 }
 
-#userList li {
+#userList li:hover {
     background-color: #f0f0f0;
 }
