@@ -6,8 +6,15 @@ const RecipeCard = ({ recipe }) => {
     image,
     name,
     cuisine,
-    rating
+    caloriesPerServing,
+    rating,
+    price = (caloriesPerServing / 20).toFixed(2) // Sample logic to assign price
   } = recipe;
+
+  const handleAddToCart = () => {
+    alert(`Added ${name} to cart`);
+    // You can replace this alert with Redux dispatch logic later
+  };
 
   return (
     <div className="recipe-card">
@@ -15,6 +22,8 @@ const RecipeCard = ({ recipe }) => {
       <div className="recipe-details">
         <h3>{name}</h3>
         <p>{cuisine} | ⭐ {rating}</p>
+        <p className="price">${price}</p>
+        <button className="add-to-cart" onClick={handleAddToCart}>Add to Cart</button>
       </div>
     </div>
   );
