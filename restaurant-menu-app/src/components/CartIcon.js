@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { ShoppingCart } from 'lucide-react';
 import './CartIcon.css';
 
 const CartIcon = () => {
   const cart = useSelector((state) => state.cart);
   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-
+  const [showPreview, setShowPreview] = useState(false);
   const [animate, setAnimate] = useState(false);
 
   useEffect(() => {
@@ -19,10 +19,28 @@ const CartIcon = () => {
   }, [totalItems]);
 
   return (
-    <Link to="/cart" className={`cart-icon ${animate ? 'bounce' : ''}`} title="View Cart">
-      <ShoppingCart size={24} />
-      {totalItems > 0 && <span className="item-count">{totalItems}</span>}
-    </Link>
+    <div
+      className="cart-wrapper"
+      onMouseEnter={() => setShowPreview(true)}
+      onMouseLeave={() => setShowPreview(false)}
+    >
+      <Link to="/cart" className={`cart-icon ${animate ? 'bounce' : ''}`} title="View Cart">
+        <ShoppingCart size={24} />
+        {totalItems > 0 && <span className="item-count">{totalItems}</span>}
+      </Link>
+
+      {showPreview && cart.length > 0 && (
+        <div className="cart-preview">
+          {cart.map(item => (
+            <div key={item.id} className="preview-item">
+              <img src={item.image} alt={item.name} />
+              <span>{item.name} × {item.quantity}</span>
+              <span>${(item.price * item.quantity).toFixed(2)}</span>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
   );
 };
 

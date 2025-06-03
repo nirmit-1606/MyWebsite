@@ -17,6 +17,12 @@
   color: #333;
 }
 
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem; /* Adjust spacing as needed */
+}
+
 .navbar-links a {
   margin-left: 2rem;
   text-decoration: none;
