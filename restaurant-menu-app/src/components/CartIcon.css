@@ -1,9 +1,10 @@
 .cart-icon {
   margin-left: 2rem;
   position: relative;
-  font-size: 1.8rem;
-  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
   color: black;
+  transition: color 0.2s ease;
 }
 
 .item-count {
