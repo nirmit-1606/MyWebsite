@@ -1,32 +1,38 @@
 import React from 'react';
 import './RecipeCard.css';
+import { addToCart } from '../features/cart/cartSlice';
+import { useDispatch } from 'react-redux';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const RecipeCard = ({ recipe }) => {
-  const {
-    image,
-    name,
-    cuisine,
-    caloriesPerServing,
-    rating,
-    price = (caloriesPerServing / 20).toFixed(2) // Sample logic to assign price
-  } = recipe;
+    const dispatch = useDispatch();
+    const {
+        id,
+        image,
+        name,
+        cuisine,
+        caloriesPerServing,
+        rating,
+        price = (caloriesPerServing / 20).toFixed(2) // Sample logic to assign price
+    } = recipe;
 
-  const handleAddToCart = () => {
-    alert(`Added ${name} to cart`);
-    // You can replace this alert with Redux dispatch logic later
-  };
+    const handleAddToCart = () => {
+        dispatch(addToCart({ id, name, price }));
+        toast.success(`${name} added to cart!`);
+    };
 
-  return (
-    <div className="recipe-card">
-      <img src={image} alt={name} className="recipe-image" />
-      <div className="recipe-details">
-        <h3>{name}</h3>
-        <p>{cuisine} | ⭐ {rating}</p>
-        <p className="price">${price}</p>
-        <button className="add-to-cart" onClick={handleAddToCart}>Add to Cart</button>
-      </div>
-    </div>
-  );
+    return (
+        <div className="recipe-card">
+            <img src={image} alt={name} className="recipe-image" />
+            <div className="recipe-details">
+                <h3>{name}</h3>
+                <p>{cuisine} | ⭐ {rating}</p>
+                <p className="price">${price}</p>
+                <button className="add-to-cart" onClick={handleAddToCart}>Add to Cart</button>
+            </div>
+        </div>
+    );
 };
 
 export default RecipeCard;
