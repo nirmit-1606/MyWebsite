@@ -1,7 +1,6 @@
 .cart-icon {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
+  margin-left: 2rem;
+  position: relative;
   font-size: 1.8rem;
   text-decoration: none;
   color: black;
@@ -12,8 +11,8 @@
   color: white;
   border-radius: 50%;
   padding: 0.1em 0.5em;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   position: absolute;
-  top: -0.5em;
-  right: -0.5em;
+  top: -8px;
+  right: -12px;
 }

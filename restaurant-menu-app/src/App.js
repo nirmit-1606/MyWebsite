@@ -5,15 +5,20 @@ import Menu from './pages/Menu';
 import Cart from './pages/Cart';
 import CartIcon from './components/CartIcon';
 import { ToastContainer } from 'react-toastify';
+import './styles/NavBar.css';
 
 function App() {
   return (
     <>
       <Router>
-        <nav>
-          <Link to="/">Home</Link> | <Link to="/menu">Menu</Link>
+        <nav className="navbar">
+          <div className="navbar-logo">🍽️ Nirmit's Bistro</div>
+          <div className="navbar-links">
+            <Link to="/">Home</Link>
+            <Link to="/menu">Menu</Link>
+            <CartIcon />
+          </div>
         </nav>
-        <CartIcon />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/menu" element={<Menu />} />
