@@ -18,6 +18,7 @@
     "react-toastify": "^11.0.5",
     "web-vitals": "^2.1.4"
   },
+  "homepage": "https://nirmit-1606.github.io/NirmitBistro",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
