@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeFromCart, clearCart, addToCart, decreaseQuantity } from '../features/cart/cartSlice';
+import { Trash2 } from 'lucide-react';
 import '../styles/Cart.css';
 
 const Cart = () => {
@@ -43,12 +44,16 @@ const Cart = () => {
                 className="remove-btn"
                 onClick={() => dispatch(removeFromCart(item.id))}
                 title="Remove item"
-              >❌</button>
+              >
+                <Trash2 size={20} />
+              </button>
             </div>
           ))}
           <div className="cart-summary">
             <h3>Total: ${getTotal()}</h3>
-            <button onClick={() => dispatch(clearCart())}>Clear Cart</button>
+            <button className="clear-cart-btn" onClick={() => dispatch(clearCart())} title="Clear Cart">
+              <Trash2 size={20} /> Clear Cart
+            </button>
           </div>
         </>
       )}

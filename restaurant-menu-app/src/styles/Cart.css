@@ -45,9 +45,30 @@
 .remove-btn {
   background: none;
   border: none;
-  font-size: 1.5rem;
   cursor: pointer;
   color: #d32f2f;
+  transition: color 0.2s ease;
+}
+
+.remove-btn:hover {
+  color: #b71c1c;
+}
+
+.clear-cart-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  padding: 0.6em 1.2em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.clear-cart-btn:hover {
+  background-color: #b71c1c;
 }
 
 .subtotal {
