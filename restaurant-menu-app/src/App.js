@@ -6,6 +6,7 @@ import Cart from './pages/Cart';
 import CartIcon from './components/CartIcon';
 import { ToastContainer } from 'react-toastify';
 import './styles/NavBar.css';
+import './styles/App.css';
 
 function App() {
   return (
