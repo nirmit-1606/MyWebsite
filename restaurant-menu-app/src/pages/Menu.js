@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchRecipes } from '../features/recipes/recipesSlice';
 import RecipeCard from '../components/RecipeCard';
+import '../styles/Menu.css';
 
 const Menu = () => {
   const dispatch = useDispatch();
@@ -12,7 +13,7 @@ const Menu = () => {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className='menu-page'>
       <h2>Our Menu</h2>
       {status === 'loading' && <p>Loading...</p>}
       {status === 'succeeded' && (
