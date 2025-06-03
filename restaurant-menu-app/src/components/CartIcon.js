@@ -24,18 +24,23 @@ const CartIcon = () => {
       onMouseEnter={() => setShowPreview(true)}
       onMouseLeave={() => setShowPreview(false)}
     >
-      <Link to="/cart" className={`cart-icon ${animate ? 'bounce' : ''}`} title="View Cart">
-        <ShoppingCart size={24} />
-        {totalItems > 0 && <span className="item-count">{totalItems}</span>}
-      </Link>
+      <div className={`cart-icon ${animate ? 'bounce' : ''}`} title="View Cart">
+        <Link to="/cart">
+          <ShoppingCart size={24} />
+          {totalItems > 0 && <span className="item-count">{totalItems}</span>}
+        </Link>
+      </div>
 
       {showPreview && cart.length > 0 && (
         <div className="cart-preview">
           {cart.map(item => (
             <div key={item.id} className="preview-item">
               <img src={item.image} alt={item.name} />
-              <span>{item.name} × {item.quantity}</span>
-              <span>${(item.price * item.quantity).toFixed(2)}</span>
+              <div className="preview-details">
+                <span className="item-name">{item.name}</span>
+                <span className="item-qty">× {item.quantity}</span>
+              </div>
+              <span className="item-total">${(item.price * item.quantity).toFixed(2)}</span>
             </div>
           ))}
         </div>

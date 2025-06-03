@@ -30,16 +30,18 @@
 
 .cart-wrapper {
   position: relative;
+  display: inline-block;
 }
 
 .cart-preview {
   position: absolute;
   right: 0;
-  top: 120%;
+  top: 100%; /* aligns directly under the icon */
+  margin-top: 0px; /* remove any accidental gap */
   background: white;
   border: 1px solid #ccc;
   padding: 0.8rem;
-  width: 250px;
+  width: 270px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   border-radius: 8px;
   z-index: 999;
@@ -48,7 +50,7 @@
 .preview-item {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.5rem;
   padding: 0.4rem 0;
   font-size: 0.9rem;
@@ -59,4 +61,23 @@
   height: 40px;
   object-fit: cover;
   border-radius: 5px;
+}
+
+.preview-details {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.item-name {
+  font-weight: 500;
+}
+
+.item-qty {
+  font-size: 0.8rem;
+  color: #777;
+}
+
+.item-total {
+  font-weight: bold;
 }
