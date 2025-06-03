@@ -14,11 +14,11 @@ const RecipeCard = ({ recipe }) => {
         cuisine,
         caloriesPerServing,
         rating,
-        price = (caloriesPerServing / 20).toFixed(2) // Sample logic to assign price
+        price = Number((caloriesPerServing / 20).toFixed(2)) // Sample logic to assign price
     } = recipe;
 
     const handleAddToCart = () => {
-        dispatch(addToCart({ id, name, price }));
+        dispatch(addToCart({ id, name, price, image }));
         toast.success(`${name} added to cart!`);
     };
 

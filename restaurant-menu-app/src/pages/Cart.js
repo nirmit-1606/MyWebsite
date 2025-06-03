@@ -20,14 +20,30 @@ const Cart = () => {
         <>
           {cart.map((item) => (
             <div key={item.id} className="cart-item">
-              <span>{item.name}</span>
+              <div className="item-info">
+                <img src={item.image} alt={item.name} />
+                <div>
+                  <h4>{item.name}</h4>
+                  <p className="unit-price">Unit Price: ${item.price.toFixed(2)}</p>
+                </div>
+              </div>
+
               <div className="qty-controls">
                 <button onClick={() => dispatch(addToCart(item))}>+</button>
                 <span>{item.quantity}</span>
-                <button onClick={() => dispatch(decreaseQuantity(item.id))} disabled={item.quantity === 1}>-</button>
-                <button onClick={() => dispatch(removeFromCart(item.id))}>Remove</button>
+                <button
+                  onClick={() => dispatch(decreaseQuantity(item.id))}
+                  disabled={item.quantity === 1}
+                >-</button>
               </div>
-              <span>${(item.price * item.quantity).toFixed(2)}</span>
+
+              <span className="subtotal">${(item.price * item.quantity).toFixed(2)}</span>
+
+              <button
+                className="remove-btn"
+                onClick={() => dispatch(removeFromCart(item.id))}
+                title="Remove item"
+              >❌</button>
             </div>
           ))}
           <div className="cart-summary">
